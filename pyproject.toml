@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cv-builder"
+version = "0.1.0"
+description = "Tailored one-page CVs from a single master profile, with checks that keep every claim backed."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Abdelhaleem Osama" }]
+keywords = ["cv", "resume", "ats", "pdf", "claude-code"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "License :: OSI Approved :: MIT License",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/abdelhaleemosama/cv-builder"
+
+[project.scripts]
+cv = "cvbuild.cli:main"
+
+[tool.setuptools]
+packages = ["cvbuild"]
+
+[tool.setuptools.package-data]
+cvbuild = ["style.css"]
+
+[tool.ruff]
+line-length = 160
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "C4", "RUF", "PTH"]
+ignore = ["E501"]

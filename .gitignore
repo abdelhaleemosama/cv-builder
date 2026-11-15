@@ -1,0 +1,11 @@
+/profile/
+/selections/
+/applications/
+__pycache__/
+*.pyc
+.venv/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+.DS_Store

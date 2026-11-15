@@ -1,0 +1,160 @@
+# An example master profile for a fictional person. `cv init` copies it to profile/master.toml,
+# which git ignores. Replace every fact with your own.
+#
+# The master profile holds everything true about you, once. A tailored CV only selects from it:
+# it may reorder, drop and reword, but it can never add a fact, a number or a technology.
+#
+# Each bullet has an id, tags, and one or two wordings:
+#   short = one tight bullet for a one-page CV
+#   long  = a fuller version to draw detail from when a role calls for it
+# Markup: *italic* (the lead-in of a bullet), **bold** (the numbers that prove the work),
+# [label](https://...) for links.
+
+[basics]
+name = "Sam Rivera"
+location = "Porto, Portugal"
+phone = "+00 000 000 000"
+email = "sam.rivera@example.com"
+links = ["example.com/in/sam-rivera", "example.org/sam-rivera"]
+
+[summaries]
+default = "Backend engineer with 4 years of experience building freight and logistics APIs in Go and Python, and event pipelines on Kafka and PostgreSQL. Comfortable owning a service from design through on-call, with a focus on latency, reliability and fast releases."
+
+# ---------------------------------------------------------------- education
+
+[[education]]
+id = "northgate"
+degree = "B.Sc. Informatics Engineering"
+school = "Northgate University, Faculty of Engineering"
+school_short = "Northgate University"
+dates = "2017 - 2021"
+location = "Porto, Portugal"
+gpa = "3.7 / 4.0"
+rank = "graduated **with honors**"
+coursework = ["Data Structures", "Algorithms", "Operating Systems", "Computer Networks", "Databases", "Distributed Systems", "Software Engineering", "Compilers"]
+coursework_short = ["Data Structures", "Algorithms", "Databases", "Distributed Systems", "Operating Systems"]
+
+# ---------------------------------------------------------------- experience
+
+[[experience]]
+id = "brightline"
+title = "Backend Engineer"
+company = "Brightline Freight"
+dates = "Mar 2023 - Present"
+location = "Porto, Portugal"
+intro = "Own the dispatch and tracking services of a freight-forwarding platform:"
+
+[[experience.items]]
+id = "dispatch-api"
+tags = ["go", "backend", "performance"]
+short = "*Dispatch API (team of 5):* moved the dispatch service from a Rails monolith to Go, cutting p95 latency from **840 ms to 120 ms** and carrying **3x** the daily load on the same hardware."
+long = "*Dispatch API (team of 5):* moved the dispatch service from a Rails monolith to Go with a strangler-fig migration, shadow traffic and a zero-downtime cutover across 14 customer integrations, cutting p95 latency from **840 ms to 120 ms** and carrying **3x** the daily load on the same hardware."
+
+[[experience.items]]
+id = "event-pipeline"
+tags = ["python", "kafka", "data"]
+short = "*Shipment events pipeline (sole owner, **6 weeks**):* built Kafka consumers in Python that load 2M events a day into PostgreSQL with idempotent writes and a dead-letter topic, cutting stuck shipments by **70%**."
+
+[[experience.items]]
+id = "releases"
+tags = ["devops", "kubernetes", "ci"]
+short = "*Release engineering:* cut the CI pipeline from 24 to **8 minutes** with test sharding and cached images, and moved releases to Kubernetes with automatic rollback."
+
+[[experience.items]]
+id = "reliability"
+tags = ["devops", "observability"]
+short = "*On-call reliability:* added runbooks and Prometheus alerts for the 6 services the team owns, reducing pages by **45%** in one quarter."
+
+[[experience.items]]
+id = "tracking-api"
+tags = ["backend", "api"]
+short = "*Public tracking API (3 engineers):* designed a REST API with API keys and rate limiting that **9** partners adopted within two months."
+
+[[experience.items]]
+id = "mentoring"
+tags = ["team", "leadership"]
+short = "*Mentoring:* onboarded **3** engineers with a two-week starter-ticket plan; each shipped to production in their first week."
+
+[[experience]]
+id = "harbor"
+title = "Software Engineer"
+company = "Harbor Analytics"
+dates = "Jul 2021 - Feb 2023"
+location = "Lisbon, Portugal"
+
+[[experience.items]]
+id = "reports"
+tags = ["sql", "performance"]
+short = "*Reporting service (team of 3):* replaced nightly batch SQL with incremental materialized views, reducing report generation from 40 minutes to **90 seconds**."
+
+[[experience.items]]
+id = "ingest"
+tags = ["python", "data"]
+short = "*Data ingestion:* automated CSV and API imports from **12** client systems with schema validation, removing about 15 hours of manual work a week."
+
+[[experience.items]]
+id = "contract-tests"
+tags = ["testing", "api"]
+short = "*Test strategy:* introduced contract tests between the API and **4** client apps, catching **17** breaking changes before release."
+
+# ---------------------------------------------------------------- projects
+
+[[projects]]
+id = "tidewatch"
+name = "Tidewatch - Open-source uptime monitor"
+dates = "2022 - 2024"
+url = "https://example.com/tidewatch"
+blurb = "Self-hosted uptime and certificate monitor written in Go, with a small web dashboard."
+blurb_long = "Self-hosted uptime and certificate monitor written in Go, with a small web dashboard, used by teams that cannot send monitoring data to a third party."
+tags = ["go", "open-source"]
+
+[[projects.items]]
+id = "checker"
+tags = ["go", "performance"]
+short = "Designed a concurrent checker that probes **5,000** endpoints a minute on a single 1-vCPU instance."
+
+[[projects.items]]
+id = "alerts"
+tags = ["go", "backend"]
+short = "Added alert routing to Slack, email and webhooks with deduplication, which cut duplicate notifications by **80%** for early users."
+
+[[projects.items]]
+id = "community"
+tags = ["open-source", "testing"]
+short = "Reached **1.2k** GitHub stars and **18** outside contributors; maintain releases, docs and a test suite with **92%** coverage."
+
+# ---------------------------------------------------------------- skills
+# Everything you can honestly list. A CV may only list skills that appear in this file.
+
+[[skills]]
+group = "Languages"
+items = ["Go", "Python", "SQL", "TypeScript", "Bash"]
+
+[[skills]]
+group = "Backend"
+items = ["gRPC", "REST", "Rails", "FastAPI", "microservices"]
+
+[[skills]]
+group = "Data and Messaging"
+items = ["PostgreSQL", "Redis", "Kafka", "materialized views"]
+
+[[skills]]
+group = "Cloud and DevOps"
+items = ["AWS", "Docker", "Kubernetes", "Terraform", "GitHub Actions", "Prometheus", "Grafana"]
+
+[[skills]]
+group = "Testing"
+items = ["pytest", "k6", "contract tests"]
+
+# ---------------------------------------------------------------- certifications
+
+[[certifications]]
+id = "aws-dev"
+text = "**AWS Certified Developer - Associate** | Amazon Web Services - Certified"
+
+[[certifications]]
+id = "ckad"
+text = "**Certified Kubernetes Application Developer (CKAD)** | CNCF - Certified"
+
+[languages]
+text = "Portuguese (Native), English (C1), Spanish (B1)"

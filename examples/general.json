@@ -1,0 +1,111 @@
+{
+  "company": "",
+  "role": "",
+  "summary": "default",
+  "sections": [
+    "summary",
+    "education",
+    "experience",
+    "projects",
+    "skills",
+    "certifications"
+  ],
+  "bold": [
+    "Go",
+    "Kafka",
+    "Kubernetes",
+    "PostgreSQL"
+  ],
+  "experience": [
+    {
+      "id": "brightline",
+      "items": [
+        {
+          "id": "dispatch-api",
+          "variant": "long"
+        },
+        "event-pipeline",
+        "releases",
+        "reliability",
+        "tracking-api",
+        "mentoring"
+      ]
+    },
+    {
+      "id": "harbor",
+      "items": [
+        "reports",
+        "ingest",
+        "contract-tests"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "tidewatch",
+      "items": [
+        "checker",
+        "alerts",
+        "community"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "group": "Languages",
+      "items": [
+        "Go",
+        "Python",
+        "SQL",
+        "TypeScript",
+        "Bash"
+      ]
+    },
+    {
+      "group": "Backend",
+      "items": [
+        "gRPC",
+        "REST",
+        "Rails",
+        "FastAPI",
+        "microservices"
+      ]
+    },
+    {
+      "group": "Data and Messaging",
+      "items": [
+        "PostgreSQL",
+        "Redis",
+        "Kafka"
+      ],
+      "also": [
+        "materialized views"
+      ]
+    },
+    {
+      "group": "Cloud and DevOps",
+      "items": [
+        "AWS",
+        "Docker",
+        "Kubernetes",
+        "Terraform",
+        "GitHub Actions",
+        "Prometheus",
+        "Grafana"
+      ]
+    },
+    {
+      "group": "Testing",
+      "items": [
+        "pytest",
+        "k6",
+        "contract tests"
+      ]
+    }
+  ],
+  "certifications": [
+    "aws-dev",
+    "ckad"
+  ],
+  "languages": true
+}
